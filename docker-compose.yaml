@@ -1,0 +1,10 @@
+# docker-compose.yml
+version: "3.8"
+services:
+  superset:
+    build: .
+    ports:
+      - "8088:8088"
+    environment:
+      - SUPERSET_SECRET_KEY=localkey
+      - SUPERSET_DB_URI=sqlite:////app/superset_home/superset.db
